@@ -26,3 +26,10 @@ def close_connection(exception):
     db = getattr(flask.g, "_database", None)
     if db is not None:
         db.close()
+
+def query_db(query, args=(), one=False):
+    """ Query the information in the database """
+    cur = get_db().execute(query, args)
+    returnval = cur.fetchall()
+    cur.close()
+    return (returnval[0] if returnval else None) if one else returnval
