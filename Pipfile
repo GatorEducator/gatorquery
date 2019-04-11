@@ -1,0 +1,24 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "*"
+
+[dev-packages]
+black = "*"
+pylint = "*"
+flake8 = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-sugar = "*"
+
+[pipenv]
+allow_prereleases = true
+
+[scripts]
+server = "python GatorQuery.py True"
+test = "./scripts/runtests.sh"
+cover = "./scripts/coverage.sh"
+lint = "./scripts/lint.sh"
