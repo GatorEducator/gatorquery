@@ -33,3 +33,9 @@ def query_db(query, args=(), one=False):
     returnval = cur.fetchall()
     cur.close()
     return (returnval[0] if returnval else None) if one else returnval
+
+def insert_db(query, args=()):
+    """ Insert queries into the database """
+    db = get_db()
+    db.execute(query, args)
+    db.commit()
