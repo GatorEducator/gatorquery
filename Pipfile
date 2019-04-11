@@ -15,7 +15,6 @@ flake8 = "*"
 pathlib = "*"
 py = "*"
 django = "==2.1.5"
-black = "*"
 
 [requires]
 python_version = "3.6"
