@@ -17,3 +17,12 @@ def get_db():
     if db is None:
         db = flask.g_database = sqlite3.connect(DATABASE)
     return db
+
+
+@app.teardown_appcontext
+# pylint: disable=unused-argument
+def close_connection(exception):
+    """ Closes the connection to the database """
+    db = getattr(flask.g, "_database", None)
+    if db is not None:
+        db.close()
