@@ -1,3 +1,3 @@
-![Pensive Spiderman](https://imgur.com/Cb3vQSR)
+![Pensive Spiderman](https://i.imgur.com/Cb3vQSR.png)
 
 # gatorquery
