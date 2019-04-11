@@ -9,3 +9,11 @@ from application import app
 
 
 DATABASE = "database.db"
+
+
+def get_db():
+    """ Retrieve the database """
+    db = getattr(flask.g, "_database", None)
+    if db is None:
+        db = flask.g_database = sqlite3.connect(DATABASE)
+    return db
