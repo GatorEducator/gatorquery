@@ -9,6 +9,7 @@ pytest-cov = "*"
 pytest-django = "*"
 pylint = "*"
 flake8 = "*"
+black = "*"
 
 [packages]
 pathlib = "*"
