@@ -1,65 +1,50 @@
-language: generic
-
 dist: xenial
+language: python
+python:
+  - "3.7"
+  - "3.6"
 
-os:
-  - linux
-  - osx
+cache:
+  directories:
+    - $HOME/.pip-cache/
 
 # ignore the virtualenv that Travis creates
 # setup a secure login to CodeCov
-# set env variables for different jobs
 env:
-  matrix:
-    - PYENV_VERSION=3.7.2
-    - PYENV_VERSION=3.6.3
   global:
-    - PYENV_ROOT=$HOME/.travis-pyenv
     - PIPENV_VENV_IN_PROJECT=1
     - PIPENV_IGNORE_VIRTUALENVS=1
     - LANG=en_US.UTF-8
     - LC_ALL=en_US.UTF-8
-    - secure: hnWlE/s8Vo+OM+Vz2p60+/jmMoGwnIdpVg2OUnu269TJYapPG+qF6ks1jYpb/XfRucfndZSZXy4UZfJnzf082hoQmAUGHm3yrRTDkrsGGK1bxea3Rhwj1bn8IrjcZqOAQAtpCsnhFbzrdRTtng8+PCBcYyru+IG6jwOrOv2EMe/CBVLNvSoRdtBgcz4QKl2SRsLhEQh+pjgZiUEY+d7mNfyhGzCD8xS4abj8KfNfKDIZfKHX9E1mvBuZm9GQC17wvLyOt0j4gtEZeoGLGF63fuLvMqZhpZh00lJ6wmSD9vTok7pqgpErR1yrzZmVDrD61bz0PL/b8kHjOLLd0HcOw9q0D0KPX5BojOJxVKglc8GaAI4CksnMmjfLjieZRMag8K8qI8lKkIiD/AABAjqwHJ0Ywm7ru42alY163y4ieatXDMBQpoLsSn1P4gs0LDvGe6Kby+jeM8nL8y+5L5qGTODnqYDHes0rHVMIXQAr7HLKyru6/Bwzz8woYr8WjBmTd1UxLtFcfSYr8Rj+Yklldz4Wt1p4Wnpj9Hd5S2eVLXeteTBKA4y/tFSenZTke+NlVK8zmHa06yVHTbLf14ggTe4hZgUM/mLXRnVFy73LyaBPQkDQpvc6HELMxj94z5OZ6DpDrESDDxVnGq3H876qiJfi/rMFAkTbtgeMu4MRbow=
+    - secure:
 
-# install pyenv with travis-pyenv
+# install mdl for checking Markdown
 before_install:
-  - wget https://github.com/praekeltfoundation/travis-pyenv/releases/latest/download/setup-pyenv.sh
-  - source setup-pyenv.sh
+  - gem install mdl
 
-# command to install dependencies (from Pipfile, not Pipfile.lock)
-# cannot use locked dependencies because of possible version changes
-# between PYENV_VERSION versions
+notifications:
+  email: never
+
+# command to install dependencies
 install:
   - pip install --upgrade pip
   - pip install --upgrade pipenv
-  - pipenv install --dev --skip-lock --python "$PYENV_VERSION"
-  - gem install mdl
-
-# send emails when there is a change or failure
-notifications:
-  email:
-    on_success: change
-    on_failure: always
-
-# use a cache to improve performance
-# cache pip installations
-# cache pyenv installations
-cache:
-  - pip
-  - directories:
-    - $HOME/.pyenv_cache
-
-# set GATORGRADER_HOME environment variable
-before_script:
-  - export GATORGRADER_HOME="/home/travis/build/gkapfham/gatorgrader"
+  - pipenv install --dev
 
 # perform testing:
-# --> run the test suite and generate coverage with Pipfile script
-# --> lint the code with Pipfile script
+# --> run the test suite with pytest and codecov
+# --> Check for black format
+# --> lint the functions with flake8
+# --> lint the test suites with flake8
+# --> lint the functions with pylint
+# --> lint the test suites with pylint
 # --> lint the README documentation with mdl
 script:
-  - pipenv run cover
-  - pipenv run lint --check
+  # - shopt -s globstar
+  # - pipenv run pytest tests --cov-config pytest.cov --cov
+  - pipenv run black **/*.py --check
+  - pipenv run flake8 **/*.py
+  - pipenv run pylint **/*.py
   - mdl README.md
 
 # report coverage information to CodeCov
