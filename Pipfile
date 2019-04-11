@@ -4,17 +4,18 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+black = "*"
 pytest = "*"
 pytest-cov = "*"
 pytest-django = "*"
 pylint = "*"
 flake8 = "*"
-black = "*"
 
 [packages]
 pathlib = "*"
 py = "*"
 django = "==2.1.5"
+black = "*"
 
 [requires]
 python_version = "3.6"
