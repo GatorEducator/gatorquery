@@ -5,3 +5,5 @@
 
 
 # gatorquery
+
+This [Django](https://www.djangoproject.com/) based web application allows course instructors to upload a course survey, distribute that survey to their students, and collect their data through a dynamically updated endpoint.
