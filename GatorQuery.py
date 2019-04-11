@@ -1,7 +1,7 @@
 """This file runs the GatorQuery application"""
 
 # imports everything from the application folder
-from application import app
+from app import app
 
 app.secret_key = "$JLmL!eCQXyajbdu2LCJ&Vwqs2JGagg3B&FRfexCmKBV"
 
