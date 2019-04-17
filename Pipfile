@@ -22,3 +22,4 @@ server = "python GatorQuery.py True"
 test = "./scripts/runtests.sh"
 cover = "./scripts/coverage.sh"
 lint = "./scripts/lint.sh"
+
