@@ -44,12 +44,26 @@ def insert_db(query, args=()):
 def validate_student(func):
     """ Checks that the user trying to login is a student """
 
-    @functools.wrap(func)
+    @functools.wraps(func)
     def f(*args, **kwds):
         if "isTeaher" not in flask.session:
             return flask.redirect("/")
         if flask.session["isTeacher"] == 1:
             return flask.redirect("/teachers/")
+        return func(*args, **kwds)
+
+    return f
+
+
+def validate_teacher(func):
+    """ Checks that the user trying to login is a teacher """
+
+    @functools.wraps(func)
+    def f(*args, **kwds):
+        if "isTeacher" not in flask.session:
+            return flask.redirect("/")
+        if flask.session["isTeacher"] == 0:
+            return flask.redirect("/students/")
         return func(*args, **kwds)
 
     return f
