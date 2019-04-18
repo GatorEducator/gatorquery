@@ -1,3 +1,5 @@
+""" Query the DB for users and redirect """
+
 import flask
 
 from application import app
