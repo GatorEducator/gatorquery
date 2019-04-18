@@ -39,3 +39,17 @@ def insert_db(query, args=()):
     db = get_db()
     db.execute(query, args)
     db.commit()
+
+
+def validate_student(func):
+    """ Checks that the user trying to login is a student """
+
+    @functools.wrap(func)
+    def f(*args, **kwds):
+        if "isTeaher" not in flask.session:
+            return flask.redirect("/")
+        if flask.session["isTeacher"] == 1:
+            return flask.redirect("/teachers/")
+        return func(*args, **kwds)
+
+    return f
