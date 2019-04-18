@@ -1,21 +1,25 @@
 [[source]]
-name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "*"
+python-dotenv = "*"
 
 [dev-packages]
 black = "*"
-pytest = "*"
-pytest-cov = "*"
-pytest-django = "*"
 pylint = "*"
 flake8 = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-sugar = "*"
 
-[packages]
-pathlib = "*"
-py = "*"
-django = "==2.1.5"
-black = "*"
+[pipenv]
+allow_prereleases = true
 
-[requires]
-python_version = "3.6"
+[scripts]
+server = "python GatorQuery.py True"
+test = "./scripts/runtests.sh"
+cover = "./scripts/coverage.sh"
+lint = "./scripts/lint.sh"
