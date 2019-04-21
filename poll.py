@@ -6,7 +6,7 @@ poll_data = {
    'question' : 'Which web framework do you use?',
    'fields'   : ['Flask', 'Django', 'TurboGears', 'web2py', 'pylonsproject']
 }
-filename = 'data.txt'
+filename = os.path.join("data", 'data.txt')
 
 @app.route('/')
 def root():
