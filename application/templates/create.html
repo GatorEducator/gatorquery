@@ -101,6 +101,11 @@
 				    font-weight: light;
 				    font-size: 32pt;
 				}
+        .pagebody h2 {
+				    font-family:arial;
+				    font-weight: light;
+				    font-size: 24pt;
+				}
 				.pagebody p {
 				    font-family: arial;
 				    font-weight: light;
@@ -126,43 +131,34 @@
 				.linkbar a:hover {
 				    font-weight:bold;
 				}
+        .plus-button {
+          background-color: #4CAF50; /* Green */
+          border: none;
+          color: white;
+          padding: 5px 5px;
+          height: 30px !important;
+          width: 30px !important;
+          font-size: 16px;
+        }
 				-->
 			</style>
 		</head>
 	{% include 'navbar.html' %}
   <body>
+
+    <!-- TESTING SOME RENDERING HERE -->
+
     <div class="pagebody">
-      <center>
-        <table border="0" cols="2" cellspacing="10">
-          <tr>
-            <td colspan="100%" align="center">
-              <h1 id="rcorner" style="color:#FFFFFF">  GatorQuery: Online forms with local access.  </h1>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <img id="rcorner" src="/static/form.png" width="365" height="350" style="opacity:1;">
-            </td>
-            <td id="rcorner">
-              <p style="color:#FFFFFF">Insert Description of GatorQuery here!</p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <br/>
-              <br/>
-              <br/>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="100%" align="center">
-              <div class="linkbar">
-                <p><a href="/">Home</a> | <a href="/login">Sign In</a> | <a href="/create">Create Survey</a> | <a href="{{ url_for('poll') }}">Testing</a></p>
-              </div>
-            </td>
-          </tr>
-        </table>
-      </center>
+      <h2 id="rcorner" style="color:#FFFFFF">  Click the plus button to start.  </h1>
     </div>
+
+    {% include 'long-answer.html' ignore missing %}
+    {% include 'short-answer.html' ignore missing %}
+    {% include 'checkbox.html' ignore missing %}
+    {% include 'linear-scale.html' ignore missing %}
+    {% include 'dropdown.html' ignore missing %}
+
+    <button class="plus-button" type="button">+</button>
+
   </body>
 </html>
