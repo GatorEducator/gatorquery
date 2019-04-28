@@ -1,7 +1,10 @@
-from application import app
-from flask import Flask, render_template
+""" Documentation needed """
 
-@app.route('/create')
+from flask import render_template
+from application import app
+
+
+@app.route("/create")
 def create_survey():
     """ Render the create_survey page """
 
@@ -10,4 +13,4 @@ def create_survey():
     # is added, {% include %} it into the create.html
     # page by some means.
 
-    return render_template('create.html')
+    return render_template("create.html")

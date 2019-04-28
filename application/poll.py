@@ -1,23 +1,30 @@
-from application import app
-from flask import Flask, render_template, request, url_for
+""" Documentation needed """
+
 import os
+from flask import render_template, request
+from application import app
+
 
 poll_data = {
-   'question' : 'Which web framework do you use?',
-   'fields'   : ['Flask', 'Django', 'TurboGears', 'web2py', 'pylonsproject']
+    "question": "Which web framework do you use?",
+    "fields": ["Flask", "Django", "TurboGears", "web2py", "pylonsproject"],
 }
 filename = os.path.join("application", "data")
 filename = os.path.join(filename, "data.txt")
 
-@app.route('/poll')
+
+@app.route("/poll")
 def poll():
-    vote = request.args.get('field')
+    """ Documentation neede """
+    vote = request.args.get("field")
 
     store_result(filename, vote)
 
-    return render_template('multi-choice.html', data=poll_data)
+    return render_template("multi-choice.html", data=poll_data)
+
 
 def store_result(filename, vote):
-        out = open(filename, 'a')
-        out.write( vote + '\n' )
-        out.close()
+    """ Documentation needed """
+    out = open(filename, "a")
+    out.write(vote + "\n")
+    out.close()
