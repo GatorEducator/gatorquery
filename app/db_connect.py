@@ -27,12 +27,14 @@ def close_connection(exception):
     if db is not None:
         db.close()
 
+
 def query_db(query, args=(), one=False):
     """ Query the information in the database """
     cur = get_db().execute(query, args)
     returnval = cur.fetchall()
     cur.close()
     return (returnval[0] if returnval else None) if one else returnval
+
 
 def insert_db(query, args=()):
     """ Insert queries into the database """

@@ -16,7 +16,8 @@ def test_flake8():
         files = glob.glob(root + "/../*.py")
         name_of_files.extend(files)
 
-    style_guide = flake8.get_style_guide(ignore=[
-        "E265", "E501", "E101", "W191", 'E402', 'E501', 'F405'])
+    style_guide = flake8.get_style_guide(
+        ignore=["E265", "E501", "E101", "W191", "E402", "E501", "F405"]
+    )
     report = style_guide.check_files(name_of_files)
-    assert report.get_statistics('E') == [], 'Flake8 found violations'
+    assert report.get_statistics("E") == [], "Flake8 found violations"
