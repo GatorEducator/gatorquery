@@ -48,7 +48,7 @@ def validate_student(func):
 
     @functools.wraps(func)
     def f(*args, **kwds):
-        if "isTeaher" not in flask.session:
+        if "isTeacher" not in flask.session:
             return flask.redirect("/")
         if flask.session["isTeacher"] == 1:
             return flask.redirect("/teachers/")
