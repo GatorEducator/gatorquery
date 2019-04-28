@@ -9,11 +9,18 @@
 
 ## A Survey Hosting Tool for Professors
 
-As an alternative to Google Forms or other survey creation sites, this program allows professors to create survey, send it to students to answer, and then dynamically collect the responses. By allowing for the dynamic collection and storing of the responses, professors do not have to repeatedly download the output to run analysis.
+As an alternative to Google Forms or other survey creation sites, this program
+allows professors to create survey, send it to students to answer, and then
+dynamically collect the responses. By allowing for the dynamic collection and
+storing of the responses, professors do not have to repeatedly download the
+output to run analysis.
 
-In the future, this program will look into supporting uploading surveys as a CSV, as well as providing integration for basic analysis tools.
+In the future, this program will look into supporting uploading surveys as a
+CSV, as well as providing integration for basic analysis tools.
 
-This [Flask](http://flask.pocoo.org/) based web application allows course instructors to upload a course survey, distribute that survey to their students, and collect their data through a dynamically updated endpoint.
+This [Flask](http://flask.pocoo.org/) based web application allows course
+instructors to upload a course survey, distribute that survey to their students,
+and collect their data through a dynamically updated endpoint.
 
 ## Pipenv
 
