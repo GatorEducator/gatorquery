@@ -1,52 +1,30 @@
 dist: xenial
 language: python
 python:
-  - "3.7"
-  - "3.6"
-
+- '3.7'
+- '3.6'
 cache:
   directories:
-    - $HOME/.pip-cache/
-
-# ignore the virtualenv that Travis creates
-# setup a secure login to CodeCov
+  - "$HOME/.pip-cache/"
 env:
   global:
-    - PIPENV_VENV_IN_PROJECT=1
-    - PIPENV_IGNORE_VIRTUALENVS=1
-    - LANG=en_US.UTF-8
-    - LC_ALL=en_US.UTF-8
-    - secure:
-
-# install mdl for checking Markdown
+  - PIPENV_VENV_IN_PROJECT=1
+  - PIPENV_IGNORE_VIRTUALENVS=1
+  - LANG=en_US.UTF-8
+  - LC_ALL=en_US.UTF-8
+  - secure: "L0K/j70AeHJJPcNV1kWi3Jr9wglgVtxOaT4ImCYN0mi5V0mU7k2TA2KbPCh9ruC1hea1q6gTL461TuwSIpWyKzhtTwgD2ttpYUyM+hCHnsaQNIIaiBn+kmdcIXslXmegklgQvhK9xCbcFCPHzcrGZTO8GOxyAfdYxjsCmebzi+sJ2VghsL96YzvFYsORnyoxaTtg294LOUAVpX8FSPEmvRXvdJ/16OKt863azuoN/eSV+poHpqLjg0Befp0iLjNKDccpyr16vD300Amy6UsLlHfOfUDqO47/qPjOCfASFM/0vF9rl914z6O75p9KQd7bL5DTqA12rXAGp/41Uv4N0ezkCjEZsQfqnFzNT1/TcsUMfm49u5x0dPstzZ/aQZEIqjf0o/ZEGPO/u0DetHDlAP4rOAdVH+IzesnmQaQhBNvleS6dikFH90ccGYmLtJVucUsCdFlZkR6bhM0vNydkh0ES4ahB/1BQINlFFeMZuvm4xkU48vKhR3ga1/rzwgV7ZOknacPQ2zyjoJ99QxX9/V6gv54wiawk8JE3xjhfUzCkKd3NHz/fD1AkPueLAFz2X6rAXs40ryCmusmsYXdYZnlBFSlaOFubhHx5IeQEZPpWzycIyxREPmMA9dr9/29PVzVG6ud8rRaCkkJx50Nq38Dm3scAb+QIuGpQLrojM9Q="
 before_install:
-  - gem install mdl
-
+- gem install mdl
 notifications:
   email: never
-
-# command to install dependencies
 install:
-  - pip install --upgrade pip
-  - pip install --upgrade pipenv
-  - pipenv install --dev
-
-# perform testing:
-# --> run the test suite with pytest and codecov
-# --> Check for black format
-# --> lint the functions with flake8
-# --> lint the test suites with flake8
-# --> lint the functions with pylint
-# --> lint the test suites with pylint
-# --> lint the README documentation with mdl
+- pip install --upgrade pip
+- pip install --upgrade pipenv
+- pipenv install --dev
 script:
-  # - shopt -s globstar
-  # - pipenv run pytest tests --cov-config pytest.cov --cov
-  - pipenv run black **/*.py --check
-  - pipenv run flake8 **/*.py
-  - pipenv run pylint **/*.py
-  - mdl README.md
-
-# report coverage information to CodeCov
+- pipenv run black **/*.py --check
+- pipenv run flake8 **/*.py
+- pipenv run pylint **/*.py
+- mdl README.md
 after_success:
-  - pipenv run codecov
+- pipenv run codecov
