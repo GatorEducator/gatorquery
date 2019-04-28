@@ -1,5 +1,6 @@
 """ Application package initializer """
 import flask
+
 # UNUSED IMPORTS BUT NEEDED LATER
 # from . import index
 # from . import db_connect
