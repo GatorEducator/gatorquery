@@ -1,10 +1,13 @@
-from flask import Flask
+""" Login and logout execution """
+import flask
 from app import app
 
-@app.route('/')
+
+@app.route("/")
 def index():
     """Render index.html"""
     return flask.render_template("index.html")
+
 
 @app.route("/logout/")
 def logout():
