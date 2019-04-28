@@ -1,6 +1,6 @@
 import flask
 
-from application import app
+from app import app
 from . import db_connect
 
 
