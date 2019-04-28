@@ -1,3 +1,4 @@
+""" Login and logout execution """
 import flask
 from app import app
 
