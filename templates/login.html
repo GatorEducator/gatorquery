@@ -6,3 +6,13 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
         <title>Gator Query</title>
     </head>
+    <body class="container">
+      <header>Gator Query</header>
+      <main class="loginPage">
+        <div id="loginBox">
+        <form action="/login" method="POST">
+            <input type="email" name="email">
+            <input type="password" name="password">
+            <br>
+            <input type="submit" value="Log in">
+        </form>
