@@ -15,7 +15,7 @@ filename = os.path.join("data", "data.txt")
 
 @app.route("/poll")
 def poll():
-    """ Documentation needed """
+    """ Poll that links to the question, and takes user to thank you screen """
     vote = request.args.get("field")
 
     out = open(filename, "a")
