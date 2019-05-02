@@ -25,7 +25,7 @@ def poll():
 
 # pylint: disable=redefined-outer-name
 def store_result(filename, vote):
-    """ Documentation needed """
+    """ Function to store the results of the poll in a file """
     out = open(filename, "a")
     out.write(vote + "\n")
     out.close()
