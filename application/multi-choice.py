@@ -1,4 +1,4 @@
-""" Documentation needed """
+""" File to create a multiple choice style question """
 
 import os
 
