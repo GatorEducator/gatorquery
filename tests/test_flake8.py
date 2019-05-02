@@ -1,6 +1,7 @@
 """ Test suite to check that files adhere to flake8 """
-# code was written with help from the gatorgrouper repository
 
+# code was written with help from the gatorgrouper repository
+# pylint: disable=cyclic-import
 import glob
 import os
 from flake8.api import legacy as flake8

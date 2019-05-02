@@ -1,0 +1,168 @@
+<style type="text/css">
+<!--
+.clearfix:after {
+	display:block;
+	clear:both;
+}
+.menu-wrap {
+	width:100%;
+	box-shadow:0px 1px 3px rgba(0,0,0,0.2);
+	display:inline-block;
+	background:#44536b;
+}
+.menu {
+	width:100%;
+	margin:0px;
+}
+.menu li {
+	margin:0px;
+	list-style:none;
+	font-family:arial;
+	font-weight:light;
+}
+.menu a {
+	transition:all linear 0.15s;
+	text-decoration:none;
+	color:#FFFFFF;
+}
+.sub-menu a {
+	color: #FFFFFF;
+}
+.menu li:hover > a, .menu .current-item > a {
+	text-decoration:none;
+	color:#ced9ef;
+}
+.menu .arrow {
+	font-size:11px;
+	line-height:0%;
+}
+.menu > ul > li {
+	float: left;
+	display:inline-block;
+	position:relative;
+	font-size:19px;
+}
+.menu > ul > li > a {
+	padding:10px 40px;
+	display:inline-block;
+	text-shadow: 0px 1px 0px rgba(0,0,0,0.4);
+}
+.menu > ul > li:hover > a, .menu > ul > .current-item > a {
+	background: #44536b;
+}
+.menu li:hover .sub-menu {
+	z-index:1;
+	opacity:1;
+}
+.sub-menu {
+    width:100%;
+    padding:5px 0px;
+    position:absolute;
+    top:100%;
+    left:0px;
+    z-index:-1;
+    opacity:0;
+    transition:opacity linear .4s;
+    box-shadow:0px 2px 3px rgba(0,0,0,0.2);
+    background:#61728e;
+}
+
+.sub-menu li {
+    display:block;
+    font-size:16px;
+}
+
+.sub-menu li a {
+    padding:10px 30px;
+    display:block;
+}
+
+.sub-menu li a:hover, .sub-menu .current-item a {
+    background:#000000;
+}
+.clearfix:before, .clearfix:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	position:absolute;
+}
+.clearfix-left {
+	margin:0px;
+	list-style:none;
+	float: right;
+}
+.clearfix-left:before, .clearfix-left:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	text-shadow: 0px 2px 2px rgba(0,0,0,0.4);
+}
+.clearfix-left:after {
+	display:block;
+	clear:both;
+}
+
+body {
+    background-color:#eaedf2;
+    background-repeat: no-repeat;
+    background-position:center;
+    background-attachment:fixed;
+}
+.pagebody h1 {
+    font-family:arial;
+    font-weight: light;
+    font-size: 32pt;
+		text-shadow: 0px 2px 2px rgba(0,0,0,0.4);
+}
+.pagebody p {
+    font-family: arial;
+    font-weight: light;
+    font-size: 16pt;
+    margin: 25pt;
+    text-align: justify;
+		text-shadow: 0px 2px 2px rgba(0,0,0,0.4);
+}
+#rcorner {
+    border-radius: 25px 50px;
+    background:#44536b;
+    padding: 15px;
+    opacity: 1;
+}
+.linkbar p {
+    text-align:center;
+    font-size: 14pt;
+    color:white;
+		text-shadow: 0px 0px 0px rgba(0,0,0,0.4);
+}
+.linkbar a {
+    text-decoration:none;
+    color:#44536b;
+}
+.linkbar a:hover {
+    font-weight:bold;
+}
+-->
+</style>
+<link rel="icon" href="/static/icon.png">
+
+<!-- Menu Bar Start -->
+<div class="menu-wrap">
+  <nav class="menu">
+    <ul class="clearfix">
+      <li><img height=40 width=80 src="/static/logo.png" hspace="10"></li>
+      <li><a href="/">Home</a></li>
+      <li><a href="#">Actions:  <span class="arrow">&#9660;</span></a>
+    <ul class="sub-menu">
+      <li><a href="">Create Survey</a></li>
+      <li><a href="">Upload CSV</a></li>
+      <li><a href="">Endpoint Link</a></li>
+      <li><a href="">Analysis Tools</a></li>
+    </ul>
+		</ul>
+		<ul class="clearfix-left">
+			<li><a href="/login">Sign In</a>
+			<li><a href="/register">Register</a>
+		</ul>
+  </nav>
+</div>
+<!-- End Menu Bar -->
