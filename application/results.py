@@ -1,4 +1,4 @@
-""" Documentation needed """
+""" Creating the results page with the results of the survey """
 
 import os
 from flask import render_template
