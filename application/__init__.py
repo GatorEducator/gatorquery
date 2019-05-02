@@ -5,9 +5,11 @@ import flask
 # main flask instance
 app = flask.Flask(__name__)
 
-# find a way to ignore pylint errors
-# these have to be here.
+# pylint: disable=wrong-import-position
 from . import login
+# pylint: disable=wrong-import-position
 from . import poll
+# pylint: disable=wrong-import-position
 from . import create
+# pylint: disable=wrong-import-position
 from . import home
