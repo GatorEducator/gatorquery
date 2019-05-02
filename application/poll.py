@@ -22,7 +22,7 @@ def poll():
 
     return render_template("multi-choice.html", data=poll_data)
 
-
+# pylint: disable=redefined-outer-name
 def store_result(filename, vote):
     """ Documentation needed """
     out = open(filename, "a")
