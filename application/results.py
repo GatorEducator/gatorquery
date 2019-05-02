@@ -13,6 +13,7 @@ poll_data = {
 filename = os.path.join("application", "data")
 filename = os.path.join(filename, "data.txt")
 
+
 @app.route("/results")
 def show_results():
     """ Documentation needed """
