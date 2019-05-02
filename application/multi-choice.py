@@ -3,7 +3,7 @@
 import os
 
 # Removed url_for import to pass pylint
-from flask import Flask, render_template, request
+from flask import render_template, request
 from application import app
 
 poll_data = {

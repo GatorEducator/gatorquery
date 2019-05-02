@@ -1,9 +1,9 @@
 """ Documentation needed """
 
 import os
-from flask import render_template, request
+from Flask import render_template, request, flask
 
-app = Flask(__name__)
+app = flask(__name__)
 
 poll_data = {
     "question": "Which web framework do you use?",
