@@ -1,8 +1,11 @@
 """ Documentation needed """
 
 import os
+# pylint: disable=unused-import
+import flask
+from flask import render_template, request
+from application import app
 
-app = flask(__name__)
 
 poll_data = {
     "question": "Which web framework do you use?",
