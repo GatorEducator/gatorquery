@@ -1,4 +1,4 @@
-""" Documentation needed """
+""" File to take the user to the login page """
 
 import flask
 from application import app
