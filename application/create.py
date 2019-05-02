@@ -1,4 +1,4 @@
-""" Documentation needed """
+""" File used to create the survey on the web application """
 
 from flask import render_template
 from application import app
