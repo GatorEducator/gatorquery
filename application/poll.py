@@ -12,7 +12,7 @@ poll_data = {
 filename = os.path.join("application", "data")
 filename = os.path.join(filename, "data.txt")
 
-
+# pylint: disable=cyclic-import
 @app.route("/poll")
 def poll():
     """ Documentation neede """
