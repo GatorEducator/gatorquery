@@ -16,7 +16,7 @@ filename = os.path.join(filename, "data.txt")
 
 @app.route("/results")
 def show_results():
-    """ Documentation needed """
+    """ Function to display the results on the results page """
     votes = {}
     for f in poll_data["fields"]:
         votes[f] = 0
