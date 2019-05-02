@@ -8,7 +8,7 @@ from application import app
 def create_survey():
     """ Render the create_survey page """
     # pylint: disable=fixme
-    # TODO: add a link system that has the user select
+    # add a link system that has the user select
     # what type of element to add.  When a new element
     # is added, {% include %} it into the create.html
     # page by some means.
