@@ -1,6 +1,7 @@
 """ Documentation needed """
 
 import os
+
 # pylint: disable=unused-import
 import flask
 from flask import render_template, request
