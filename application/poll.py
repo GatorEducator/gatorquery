@@ -1,4 +1,4 @@
-""" Documentation needed """
+""" Creating the poll that is used to ask what framework is being used """
 
 import os
 from flask import render_template, request
@@ -15,7 +15,7 @@ filename = os.path.join(filename, "data.txt")
 
 @app.route("/poll")
 def poll():
-    """ Documentation neede """
+    """ Creation of the poll that takes user to multiple choice page """
     vote = request.args.get("field")
 
     store_result(filename, vote)
