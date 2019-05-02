@@ -1,6 +1,7 @@
 """ Documentation needed """
 
 import os
+import Flask
 from Flask import render_template, request, flask
 
 app = flask(__name__)
