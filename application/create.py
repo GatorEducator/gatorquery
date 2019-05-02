@@ -3,7 +3,7 @@
 from flask import render_template
 from application import app
 
-# pylint: disable=cyclic-import
+
 @app.route("/create")
 def create_survey():
     """ Render the create_survey page """
