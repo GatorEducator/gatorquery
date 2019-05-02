@@ -1,3 +1,5 @@
+""" Test suite to check that files adhere to flake8 """
+
 # code was written with help from the gatorgrouper repository
 
 import glob
